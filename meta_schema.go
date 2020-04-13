@@ -137,11 +137,11 @@ type AnyOfJSONSchemaUnorderedSetOfJSONSchemawrpyYBUSSidr3R5Q struct {
 type UnorderedSetOfStringDoaGddGAIEp1G0PF []StringDoaGddGA
 type ObjectWrpyYBUS map[string]interface{}
 type UnorderedSetOfAnyL9Fw4VUOyeAFYsFq []AnyL9Fw4VUO
-type Any17L18NF5 interface{}
+type Any17L18NF5 string // interface{}
 type UnorderedSetOfAny17L18NF5VWcS9ROi []Any17L18NF5
 type AnyOfAny17L18NF5UnorderedSetOfAny17L18NF5VWcS9ROiRlIv9QVc struct {
-	Any17L18NF5                       *Any17L18NF5
-	UnorderedSetOfAny17L18NF5VWcS9ROi *UnorderedSetOfAny17L18NF5VWcS9ROi
+	*Any17L18NF5
+	*UnorderedSetOfAny17L18NF5VWcS9ROi
 }
 //
 // --- Default ---
