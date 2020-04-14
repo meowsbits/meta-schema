@@ -123,10 +123,36 @@ type ReferenceObject struct {
 }
 
 type OneOfReferenceObjectTagObjectMTCfXRqB struct {
+
+
 	TagObject       *TagObject
 	ReferenceObject *ReferenceObject
 }
+func (t OneOfReferenceObjectTagObjectMTCfXRqB) MarshalJSON() ([]byte, error) {
+  
+  if t.TagObject != nil {
+    return json.Marshal(t.TagObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *OneOfReferenceObjectTagObjectMTCfXRqB) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := TagObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.TagObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 type MethodObjectTags []OneOfReferenceObjectTagObjectMTCfXRqB
 
 // Format the server expects the params. Defaults to 'by-position'.
@@ -182,7 +208,7 @@ type AnyOfJSONSchemaUnorderedSetOfJSONSchemawrpyYBUSSidr3R5Q struct {
 	UnorderedSetOfJSONSchemawrpyYBUS *UnorderedSetOfJSONSchemawrpyYBUS
 }
 
-func (t *AnyOfJSONSchemaUnorderedSetOfJSONSchemawrpyYBUSSidr3R5Q) MarshalJSON() ([]byte, error) {
+func (t AnyOfJSONSchemaUnorderedSetOfJSONSchemawrpyYBUSSidr3R5Q) MarshalJSON() ([]byte, error) {
   if t.JSONSchema != nil {
     return json.Marshal(t.JSONSchema)
   }
@@ -228,7 +254,7 @@ type AnyOfAny17L18NF5UnorderedSetOfAny17L18NF5VWcS9ROiRlIv9QVc struct {
 	UnorderedSetOfAny17L18NF5VWcS9ROi *UnorderedSetOfAny17L18NF5VWcS9ROi
 }
 
-func (t *AnyOfAny17L18NF5UnorderedSetOfAny17L18NF5VWcS9ROiRlIv9QVc) MarshalJSON() ([]byte, error) {
+func (t AnyOfAny17L18NF5UnorderedSetOfAny17L18NF5VWcS9ROiRlIv9QVc) MarshalJSON() ([]byte, error) {
   if t.Any17L18NF5 != nil {
     return json.Marshal(t.Any17L18NF5)
   }
@@ -322,17 +348,69 @@ type ContentDescriptorObject struct {
 }
 
 type OneOfContentDescriptorObjectReferenceObjectI0Ye8PrQ struct {
+
+
 	ContentDescriptorObject *ContentDescriptorObject
 	ReferenceObject         *ReferenceObject
 }
+func (t OneOfContentDescriptorObjectReferenceObjectI0Ye8PrQ) MarshalJSON() ([]byte, error) {
+  
+  if t.ContentDescriptorObject != nil {
+    return json.Marshal(t.ContentDescriptorObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *OneOfContentDescriptorObjectReferenceObjectI0Ye8PrQ) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := ContentDescriptorObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.ContentDescriptorObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 type MethodObjectParams []OneOfContentDescriptorObjectReferenceObjectI0Ye8PrQ
 
 type MethodObjectResult struct {
+
+
 	ContentDescriptorObject *ContentDescriptorObject
 	ReferenceObject         *ReferenceObject
 }
+func (t MethodObjectResult) MarshalJSON() ([]byte, error) {
+  
+  if t.ContentDescriptorObject != nil {
+    return json.Marshal(t.ContentDescriptorObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *MethodObjectResult) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := ContentDescriptorObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.ContentDescriptorObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 // A Number that indicates the error type that occurred. This MUST be an integer. The error codes from and including -32768 to -32000 are reserved for pre-defined errors. These pre-defined errors SHOULD be assumed to be returned from any JSON-RPC api.
 type ErrorObjectCode int64
 
@@ -350,10 +428,36 @@ type ErrorObject struct {
 }
 
 type OneOfErrorObjectReferenceObject1KnseVEO struct {
+
+
 	ErrorObject     *ErrorObject
 	ReferenceObject *ReferenceObject
 }
+func (t OneOfErrorObjectReferenceObject1KnseVEO) MarshalJSON() ([]byte, error) {
+  
+  if t.ErrorObject != nil {
+    return json.Marshal(t.ErrorObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *OneOfErrorObjectReferenceObject1KnseVEO) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := ErrorObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.ErrorObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 // Defines an application level error.
 type MethodObjectErrors []OneOfErrorObjectReferenceObject1KnseVEO
 
@@ -385,10 +489,36 @@ type LinkObject struct {
 }
 
 type OneOfLinkObjectReferenceObjectXyKfUxb0 struct {
+
+
 	LinkObject      *LinkObject
 	ReferenceObject *ReferenceObject
 }
+func (t OneOfLinkObjectReferenceObjectXyKfUxb0) MarshalJSON() ([]byte, error) {
+  
+  if t.LinkObject != nil {
+    return json.Marshal(t.LinkObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *OneOfLinkObjectReferenceObjectXyKfUxb0) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := LinkObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.LinkObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 type MethodObjectLinks []OneOfLinkObjectReferenceObjectXyKfUxb0
 
 type ExamplePairingObjectName string
@@ -411,17 +541,69 @@ type ExampleObject struct {
 }
 
 type OneOfExampleObjectReferenceObject5DJ6EmZt struct {
+
+
 	ExampleObject   *ExampleObject
 	ReferenceObject *ReferenceObject
 }
+func (t OneOfExampleObjectReferenceObject5DJ6EmZt) MarshalJSON() ([]byte, error) {
+  
+  if t.ExampleObject != nil {
+    return json.Marshal(t.ExampleObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *OneOfExampleObjectReferenceObject5DJ6EmZt) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := ExampleObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.ExampleObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 type ExamplePairingObjectParams []OneOfExampleObjectReferenceObject5DJ6EmZt
 
 type ExamplePairingObjectresult struct {
+
+
 	ExampleObject   *ExampleObject
 	ReferenceObject *ReferenceObject
 }
+func (t ExamplePairingObjectresult) MarshalJSON() ([]byte, error) {
+  
+  if t.ExampleObject != nil {
+    return json.Marshal(t.ExampleObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *ExamplePairingObjectresult) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := ExampleObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.ExampleObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 type ExamplePairingObject struct {
 	Name        *ExamplePairingObjectName        `json:"name"`
 	Description *ExamplePairingObjectDescription `json:"description,omitempty"`
@@ -430,10 +612,36 @@ type ExamplePairingObject struct {
 }
 
 type OneOfExamplePairingObjectReferenceObjectWEBfRSyK struct {
+
+
 	ExamplePairingObject *ExamplePairingObject
 	ReferenceObject      *ReferenceObject
 }
+func (t OneOfExamplePairingObjectReferenceObjectWEBfRSyK) MarshalJSON() ([]byte, error) {
+  
+  if t.ExamplePairingObject != nil {
+    return json.Marshal(t.ExamplePairingObject)
+  }
+  return json.Marshal(t.ReferenceObject)
+}
 
+func (t *OneOfExamplePairingObjectReferenceObjectWEBfRSyK) UnmarshalJSON(bytes []byte) error {
+  var err error
+  
+  try0 := ExamplePairingObject{}
+  err = json.Unmarshal(bytes, &try0)
+  if err == nil {
+    t.ExamplePairingObject = &try0
+    return nil
+  }
+  try1 := ReferenceObject{}
+  err = json.Unmarshal(bytes, &try1)
+  if err != nil {
+    return err
+  }
+  t.ReferenceObject = &try1
+  return nil
+}
 type MethodObjectExamples []OneOfExamplePairingObjectReferenceObjectWEBfRSyK
 
 type MethodObjectDeprecated bool
